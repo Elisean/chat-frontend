@@ -28,7 +28,7 @@ const SingUp: NextPage = () => {
         <div className={styles.inner}>
             <div className={styles.outherLink}>
                 <p className={styles.question}>Forgot your password?</p>
-                <Link href='/Sign-in' className={styles.link}>Click here</Link>
+                <Link href='/Sign-in-page' className={styles.link}>Click here</Link>
             </div>
         </div>
     </main>

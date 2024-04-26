@@ -3,13 +3,9 @@ import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import VKProvider from "next-auth/providers/vk";
 import Credentials from "next-auth/providers/credentials";
+import { users } from '../../../db.json'
 
-const users = [
-    {   
-        email: '123@mail.ru',
-        pass: '123321'
-    }  
-]
+
 export const authConfig: AuthOptions = {
     providers:[
         GitHubProvider({
@@ -26,18 +22,21 @@ export const authConfig: AuthOptions = {
         }), 
         Credentials({
             credentials: {
-                email: {label: 'email', type: 'email', required:true},
+                // email: {label: 'email', type: 'email', required:true},
                 password: {label: 'password', type: 'password', required:true},
+                nickName: {label: 'nickName', type: 'text', required:true}
             },
             authorize(credentials){
-                if(!credentials?.email || !credentials.password) return null
+                if(!credentials?.nickName || !credentials.password) return null
 
-                const currentUser = users.find(user => user.email === credentials.email)
+                const currentUser = users.find(user => user.nickName === credentials.nickName)
 
-                if(currentUser && currentUser.pass === credentials.password){
-                    const {pass, ...userWithoutPass} = currentUser
+                if(currentUser && currentUser.password === credentials.password){
+                    const {password, ...userWithoutPass} = currentUser
 
-                    return userWithoutPass as User;
+                    return userWithoutPass as any;
+                }else{
+                    console.log(credentials)
                 }
                 return null
             }

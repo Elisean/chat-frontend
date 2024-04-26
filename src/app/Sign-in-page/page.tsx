@@ -8,7 +8,7 @@ import { Button } from '@/components/Button/Button'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
-import type { FormEvent, FormEventHandler } from 'react'
+import type { FormEventHandler } from 'react'
 
 
 const signInPage: NextPage = () => {
@@ -19,10 +19,10 @@ const router = useRouter();
     event?.preventDefault()
      
     const formData = new FormData(event.currentTarget);
-    console.log(formData)
+  
    const res = await signIn('credentials', {
-      email: formData.get('Username'),
-      password: formData.get('userPassword'),
+      nickName: formData.get('nickName'),
+      password: formData.get('password'),
 
       redirect: false,
     });
@@ -42,8 +42,8 @@ const router = useRouter();
     <main className={styles.wrapper}>
       <Title>Sign In Chat</Title>
       <form action="#" className={styles.form} onSubmit={handleSubmit}>
-        <Input type='text' name='username' placeholder='Username' className={styles.userName}/>
-        <Input type='password' name='userpassword' placeholder='Password' className={styles.userPassword}/>
+        <Input type='text' name='nickName' placeholder='Username' className={styles.userName}/>
+        <Input type='password' name='password' placeholder='password' className={styles.userPassword}/>
         <span className={styles.formButtonBg}></span>
         <Button className={styles.formButton}>
           <Image 
