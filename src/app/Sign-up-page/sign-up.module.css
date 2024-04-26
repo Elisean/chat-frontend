@@ -1,0 +1,92 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 760px;
+    margin: 30px auto 0 auto;
+    height: 310px;
+    background-color: var(--bg-input);
+    padding: 0 0 0 50px;
+    border-radius:10px;
+    position: relative;
+}
+.formButton{
+    position: absolute;
+    top: 50%;
+    right: -55px;
+    background-color: var(--bg-input);
+    outline: none;
+    border: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.formButton img{
+    position: absolute;
+    left: 20px;
+    top: 18px;
+}
+
+.formButtonBg{
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-color);
+    display: block;
+    position: absolute;
+    right: -34px;
+    border-radius: 50%;
+}
+
+.userName,
+.userPassword,
+.userMail{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--main-text);
+    padding: 35px 10px 35px 0;
+    background-color: var(--bg-input);
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 760px;
+}
+.userName{
+    border-bottom:1px solid var(--bg-color);
+}
+.userPassword{
+    border-top:1px solid var(--bg-color);
+    border-bottom:1px solid var(--bg-color);
+}
+.outherLink{
+   display:flex;
+}
+.question{
+    color: var(--main-grey);
+}
+.link{
+    margin: 0 0 0 7px;
+}
+.inner{
+    display: flex;
+    width: 100%;
+    max-width: 760px;
+    justify-content: space-between;
+    margin: 10px auto 0 auto;
+    align-items: center;
+}
+.signSocialNetwork{
+    margin: 0 0 0 20px;
+}
+.socialIcon{
+    margin: 0 0 0 15px;
+}

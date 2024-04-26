@@ -14,7 +14,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color:var(--bg-color);
+  background: rgb(52,56,61);
+  background: radial-gradient(circle, rgba(52,56,61,1) 70%, rgba(98,112,122,1) 100%);
   color: var(--main-text);
 
 }
